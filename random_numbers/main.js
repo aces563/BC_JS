@@ -9,9 +9,9 @@ function randomNumbers(){
         console.log(addUp);
 
 
-    } else if (number1 >= 0  && number2 >=0  && number3 >=0 ){
+    } 
+    else if (number1 >= 0  && number2 >=0  && number3 >=0 ){
         console.log(multiply);
-
 
     }
     
