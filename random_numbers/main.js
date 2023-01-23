@@ -7,9 +7,15 @@ function randomNumbers(){
 
     if (number1 >= 0  || number2 >=0  || number3 >=0 ){
         console.log(addUp);
+
+
+    } else if (number1 >= 0  && number2 >=0  && number3 >=0 ){
         console.log(multiply);
 
-    } else if (number1 < 0 && number2 < 0 && number3 < 0 ){
+
+    }
+    
+    else if (number1 < 0 && number2 < 0 && number3 < 0 ){
         console.log('only negatives')
     }
 
