@@ -17,10 +17,10 @@ function dailySalary(){
 
 
     if (tenLitres >= 10){
-        result.textContent = `Good, you can escape, €${Number(price) * Number(price)} (You got over 10 litres)`;
+        result.textContent = `You get €${Number(price) * Number(price)} of gasoline. (Good, you can escape)`;
     }
     else if (tenLitres < 10){
-        result.textContent = `You have to stay here because you've got less than €${Number(price) * Number(money)} litres`;
+        result.textContent = `You get €${Number(price) * Number(money)} of gasoline. (OOps! You have to stay here.)`;
     }
 
 }
