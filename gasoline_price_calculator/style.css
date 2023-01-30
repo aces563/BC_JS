@@ -10,7 +10,7 @@ label{
 }
 
 
-#hours, #hourlyFee{
+#price, #money{
     border-radius: 15px;
 }
 
@@ -24,7 +24,7 @@ button{
     font-weight: bold;
 }
 
-#salary{
+#result{
     font-weight: bold;
     font-size: larger;
 }
