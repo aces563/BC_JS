@@ -1,0 +1,37 @@
+*{
+    text-align: center;
+    
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+label, input{
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: large;
+}
+
+
+#price, #money{
+    border-radius: 15px;
+}
+
+button{
+    padding: 8px;
+    border-radius: 25px;
+    background-color: green;
+    color: #fff;
+    margin: 2%;
+    font-size: small;
+    font-weight: bold;
+}
+
+#result{
+    font-weight: bold;
+    font-size: larger;
+    
+}
+
