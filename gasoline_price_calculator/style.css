@@ -7,9 +7,10 @@ body{
     font-family: 'Raleway', sans-serif;
 }
 
-label{
+label, input{
     display: block;
-    margin: 1%;
+    margin: auto;
+    margin-bottom: 10px;
     font-size: large;
 }
 
@@ -33,3 +34,4 @@ button{
     font-size: larger;
     
 }
+
