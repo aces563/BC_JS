@@ -1,0 +1,30 @@
+*{
+    text-align: center;
+    
+}
+
+label{
+    display: block;
+    margin: 1%;
+    font-size: large;
+}
+
+
+#hours, #hourlyFee{
+    border-radius: 15px;
+}
+
+button{
+    padding: 8px;
+    border-radius: 25px;
+    background-color: green;
+    color: #fff;
+    margin: 2%;
+    font-size: small;
+    font-weight: bold;
+}
+
+#salary{
+    font-weight: bold;
+    font-size: larger;
+}
