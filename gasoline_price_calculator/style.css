@@ -3,6 +3,10 @@
     
 }
 
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
 label{
     display: block;
     margin: 1%;
