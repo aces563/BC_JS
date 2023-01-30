@@ -40,18 +40,18 @@ function temperatureConverter(id){
     const f2k = (+fahrenheit.value - 32) * 5 / 9 + 273.15;
 
     if (id == celcius.id){
-        fahrenheit.value = c2f;
-        kelvin.value = c2k;
+        fahrenheit.value = Math.round(c2f * 100) / 100;
+        kelvin.value = Math.round (c2k * 100) / 100;
     }
 
     else if (id == fahrenheit.id){
-        celcius.value = f2c;
-        kelvin.value = f2k;
+        celcius.value = Math.round(f2c * 100) / 100;
+        kelvin.value = Math.round(f2k * 100) / 100;
     }
 
     else {
-        celcius.value = k2c;
-        fahrenheit.value = k2f;
+        celcius.value = Math.round(k2c * 100) / 100;
+        fahrenheit.value = Math.round(k2f * 100) / 100;
     }
 
     
