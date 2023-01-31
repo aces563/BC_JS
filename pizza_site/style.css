@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.heading-padding {
+    padding: 10px;
+}
+
+
+header {
+    border: 1px solid tomato;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: tomato;
+}
+
+
+
+
+header li {
+    display: inline-block;
+    width: 150px;
+
+}
+
+header li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main{
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.featured-image {
+    width: 300px;
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 3px 5px 1px;
+}
+
+figcaption {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+
+.main {
+    flex-basis: 60%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 5px;
+}
+.sidebar {
+    flex-basis: 38.5%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    box-shadow: 1px 3px 3px 1px;
+}
+
+.order-form {
+    padding: 10px;
+}
+
+
+.order-form .text-input, .order-form .text-label{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.order-form .text-input {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.order-form .radio {
+    /* margin-top: 15px; */
+    display: inline-block;
+    width: 50px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.pizza-options {
+    /* padding: 10px; */
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px;
+}
+
+
+fieldset {
+    border-radius: 10px;
+    text-align: center;
+    padding: 25px;
+}
+
+.topping-checkboxes {
+    width: 40px;
+}
+
+.delivery-options {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 22px;
+    width: 130px;
+}
+
+.summary-info {
+    margin: 10px;
+    padding: 5px;
+}
+
+
+
+
+
