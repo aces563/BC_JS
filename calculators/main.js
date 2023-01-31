@@ -39,13 +39,13 @@ function temperatureConverter(id){
     const f2c = 5 / 9 * (+fahrenheit.value - 32);
     const f2k = (+fahrenheit.value - 32) * 5 / 9 + 273.15;
 
-    if (id == celcius.id){
+    if (id === celcius.id){
         fahrenheit.value = Math.round(c2f * 100) / 100;
         kelvin.value = Math.round (c2k * 100) / 100;
     }
 
-    else if (id == fahrenheit.id){
-        celcius.value = Math.round(f2c * 100) / 100;
+    else if (id === fahrenheit.id){
+        celcius.value = (f2c).toFixed(2);
         kelvin.value = Math.round(f2k * 100) / 100;
     }
 
