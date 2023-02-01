@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -51,19 +54,19 @@
                     <fieldset>
                         <legend>Order form</legend>
 
-                        <label class="text-input" for="fname">First name</label>
-                        <input class="text-input" type="text" id="fname">
-                        <label class="text-input" for="lname">Last name</label>
-                        <input class="text-input" type="text" id="lname">
-                        <p class="align-center pizza-options">Select size:</p>
+                        <label class="text-input" for="cname">Name</label>
+                        <input class="text-input" type="text" id="cname">
+                        <!-- <label class="text-input" for="lname">Last name</label>
+                        <input class="text-input" type="text" id="lname"> -->
+                        <p class="align-center pizza-options">Select pizza size: </p>
                         <label class="radio" for="size2">Size 2</label>
-                        <input class="radio" type="radio" name="size" id="size2">
+                        <input class="radio" type="radio" name="size" id="size2" value="2">
                         <label class="radio" for="size4">Size 4</label>
-                        <input class="radio" type="radio" name="size" id="size4">
-                        <label class="radio" for="size6">Size 6</label>
-                        <input class="radio" type="radio" name="size" id="size6"> 
+                        <input class="radio" type="radio" name="size" id="size4" value="4">
+                        <label  class="radio" for="size6">Size 6</label>
+                        <input class="radio" type="radio" name="size" id="size6" value="6"> 
                         <label class="radio" for="size6">Size 8</label>
-                        <input class="radio" type="radio" name="size" id="size6">
+                        <input class="radio" type="radio" name="size" id="size8" value="8">
                         
                         <p class="align-center pizza-options">Choose toppings (first four toppings are free. Additional toppings cost €0.50 each):</p>
                         <label class="topping-checkboxes" for="blue-cheese">Blue cheese</label>
@@ -98,12 +101,11 @@
                         
                         <p class="pizza-options">Select delivery option:</p>
                         <select class="delivery-options" name="delivery" id="delivery">
-                            <option value="home">Home delivery</option>
+                            <option value="home delivery">home delivery</option>
                             <option value="pick-up">Pick-up</option>
                             <option value="eat-in">Eat in</option>
                         </select>
-                        <label for="submit"></label>
-                        <input type="submit" value="submit" name="submit" id="submit">
+                        
                             
                     </fieldset>
                 </form> 
@@ -126,6 +128,7 @@
             </section>
         </div>
     </main>
+    <footer>copyright &#169; 2023 Michael Akerele</footer>
     <script src="main.js"></script>
 </body>
 </html>
