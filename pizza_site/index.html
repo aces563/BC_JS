@@ -60,13 +60,13 @@
                         <input class="text-input" type="text" id="lname"> -->
                         <p class="align-center pizza-options">Select pizza size: </p>
                         <label class="radio" for="size2">Size 2</label>
-                        <input class="radio" type="radio" name="size" id="size2" value="2">
+                        <input class="radio" type="radio" name="size" id="size2" value="7.50" size="2">
                         <label class="radio" for="size4">Size 4</label>
-                        <input class="radio" type="radio" name="size" id="size4" value="4">
+                        <input class="radio" type="radio" name="size" id="size4" value="10.50" size="4">
                         <label  class="radio" for="size6">Size 6</label>
-                        <input class="radio" type="radio" name="size" id="size6" value="6"> 
+                        <input class="radio" type="radio" name="size" id="size6" value="12.50" size="6"> 
                         <label class="radio" for="size6">Size 8</label>
-                        <input class="radio" type="radio" name="size" id="size8" value="8">
+                        <input class="radio" type="radio" name="size" id="size8" value="15.50" size="8">
                         
                         <p class="align-center pizza-options">Choose toppings (first four toppings are free. Additional toppings cost €0.50 each):</p>
                         <label class="topping-checkboxes" for="blue-cheese">Blue cheese</label>
@@ -96,8 +96,8 @@
                         <label class="topping-checkboxes" for="jalapeno">Jalapeno</label>
                         <input class="topping-checkboxes" type="checkbox" name="jalapeno" id="jalapeno">
                         
-                        <label class="topping-checkboxes" for="cheddar">Cheddar cheese</label>
-                        <input class="topping-checkboxes" type="checkbox" name="cheddar" id="cheddar">
+                        <label class="topping-checkboxes" for="mushroom">Mushroom</label>
+                        <input class="topping-checkboxes" type="checkbox" name="mushroom" id="mushroom">
                         
                         <p class="pizza-options">Select delivery option:</p>
                         <select class="delivery-options" name="delivery" id="delivery">
@@ -120,7 +120,7 @@
                 <div class="summary-info pizza-size"></div>
                 <div class="summary-info pizza-toppings"></div>
                 <div class="summary-info delivery-method"></div>
-                <div class="summary-info total-price"></div>
+                <div class="summary-info" id="total-price"></div>
 
                 
 
