@@ -215,6 +215,12 @@ const checks = [check2, check4, check6, check8]
 
 function jalapenoCheck(){
 
+    finalSum();
+
+    total = bill;
+    
+    thePrice.textContent = total;
+
 
     switch (jalapeno.checked) {
         case true:  
@@ -222,12 +228,11 @@ function jalapenoCheck(){
             
             theToppings.textContent = addedToppings;
 
-            toppingsSum();
+            finalSum();
 
-            console.log(toppingCost)
-
-                            
-            thePrice.textContent = +basePrice + toppingCost;
+            total = bill;
+            
+            thePrice.textContent = total;
 
             break;
     
@@ -238,11 +243,11 @@ function jalapenoCheck(){
             addedToppings.pop(jalapeno.name);
             theToppings.textContent = addedToppings;
 
-            toppingsSum();
+            finalSum();
 
-
-            thePrice.textContent = +basePrice + toppingCost;            
-            console.log(addedToppings, total);
+            total = bill;
+            
+            thePrice.textContent = total;
             break;
            
         }
@@ -257,12 +262,11 @@ function mushroomCheck(){
             
             theToppings.textContent = addedToppings;
 
-            // newChecking();
+            finalSum();
 
-            toppingsSum();
-
-                            
-            thePrice.textContent = +basePrice + toppingCost;
+            total = bill;
+            
+            thePrice.textContent = total;
 
             break;
     
@@ -273,12 +277,11 @@ function mushroomCheck(){
             addedToppings.pop(mushroom.name);
             theToppings.textContent = addedToppings;
 
-            toppingsSum();
+            finalSum();
 
-
-            thePrice.textContent = +basePrice + toppingCost;
+            total = bill;
             
-            console.log(addedToppings, total);
+            thePrice.textContent = total;
             break;
            
         }
@@ -293,11 +296,11 @@ function chickenCheck(){
             
             theToppings.textContent = addedToppings;
 
-            // newChecking();
+            finalSum();
 
-            toppingsSum();
-                            
-            thePrice.textContent = +basePrice + toppingCost;
+            total = bill;
+            
+            thePrice.textContent = total;
 
             break;
     
@@ -308,12 +311,13 @@ function chickenCheck(){
             addedToppings.pop(chicken.name);
             theToppings.textContent = addedToppings;
 
-            toppingsSum();
 
 
+            finalSum();
 
-            thePrice.textContent = +basePrice + toppingCost;            
-            console.log(addedToppings, total);
+            total = bill;
+            
+            thePrice.textContent = total;
             break;
            
         }
@@ -331,11 +335,11 @@ function beefCheck(){
             
             theToppings.textContent = addedToppings;
 
-            // newChecking();
+            finalSum();
 
-            toppingsSum();
-                            
-            thePrice.textContent = +basePrice + toppingCost;
+            total = bill;
+            
+            thePrice.textContent = total;
 
             break;
     
@@ -346,10 +350,12 @@ function beefCheck(){
             addedToppings.pop(beef.name);
             theToppings.textContent = addedToppings;
 
-            toppingsSum();
 
-            thePrice.textContent = +basePrice + toppingCost;            
-            console.log(addedToppings, total);
+            finalSum();
+
+            total = bill;
+            
+            thePrice.textContent = total;
             break;
            
         }
@@ -365,11 +371,11 @@ function prawnCheck(){
             
             theToppings.textContent = addedToppings;
 
-            // newChecking();
+            finalSum();
 
-            toppingsSum();
-                            
-            thePrice.textContent = +basePrice + toppingCost;
+            total = bill;
+            
+            thePrice.textContent = total;
 
             break;
     
@@ -380,12 +386,11 @@ function prawnCheck(){
             addedToppings.pop(prawn.name);
             theToppings.textContent = addedToppings;
 
-            toppingsSum();
+            finalSum();
 
-
-
-            thePrice.textContent = +basePrice + toppingCost;            
-            console.log(addedToppings, total);
+            total = bill;
+            
+            thePrice.textContent = total;
             break;
            
         }
@@ -401,11 +406,11 @@ function mozzarelaCheck(){
             
             theToppings.textContent = addedToppings;
 
-            // newChecking();
+            finalSum();
 
-            toppingsSum();
-                            
-            thePrice.textContent = +basePrice + toppingCost;
+            total = bill;
+            
+            thePrice.textContent = total;
 
             break;
     
@@ -416,12 +421,11 @@ function mozzarelaCheck(){
             addedToppings.pop(mozzarela.name);
             theToppings.textContent = addedToppings;
 
-            toppingsSum();
+            finalSum();
 
-
-
-            thePrice.textContent = +basePrice + toppingCost;            
-            console.log(addedToppings, total);
+            total = bill;
+            
+            thePrice.textContent = total;
             break;
            
         }
@@ -437,11 +441,11 @@ function hamCheck(){
             
             theToppings.textContent = addedToppings;
 
-            // newChecking();
+            finalSum();
 
-            toppingsSum();
-                            
-            thePrice.textContent = +basePrice + toppingCost;
+            total = bill;
+            
+            thePrice.textContent = total;
 
             break;
     
@@ -452,12 +456,11 @@ function hamCheck(){
             addedToppings.pop(ham.name);
             theToppings.textContent = addedToppings;
 
-            toppingsSum();
+            finalSum();
 
-
-
-            thePrice.textContent = +basePrice + toppingCost;            
-            console.log(addedToppings, total);
+            total = bill;
+            
+            thePrice.textContent = total;
             break;
            
         }
@@ -473,11 +476,11 @@ function pepperoniCheck(){
             
             theToppings.textContent = addedToppings;
 
-            // newChecking();
+            finalSum();
 
-            toppingsSum();
-                            
-            thePrice.textContent = +basePrice + toppingCost;
+            total = bill;
+            
+            thePrice.textContent = total;
 
             break;
     
@@ -488,12 +491,11 @@ function pepperoniCheck(){
             addedToppings.pop(pepperoni.name);
             theToppings.textContent = addedToppings;
 
-            toppingsSum();
+            finalSum();
 
-
-
-            thePrice.textContent = +basePrice + toppingCost;            
-            console.log(addedToppings, total);
+            total = bill;
+            
+            thePrice.textContent = total;
             break;
            
         }
@@ -509,11 +511,11 @@ function fetaCheck(){
             
             theToppings.textContent = addedToppings;
 
-            // newChecking();
+            finalSum();
 
-            toppingsSum();
-                            
-            thePrice.textContent = +basePrice + toppingCost;
+            total = bill;
+            
+            thePrice.textContent = total;
 
             break;
     
@@ -524,12 +526,11 @@ function fetaCheck(){
             addedToppings.pop(feta.name);
             theToppings.textContent = addedToppings;
 
-            toppingsSum();
+            finalSum();
 
-
-
-            thePrice.textContent = +basePrice + toppingCost;            
-            console.log(addedToppings, total);
+            total = bill;
+            
+            thePrice.textContent = total;
             break;
            
         }
@@ -545,11 +546,11 @@ function blueCheeseCheck(){
             
             theToppings.textContent = addedToppings;
 
-            // newChecking();
+            finalSum();
 
-            toppingsSum();
-                            
-            thePrice.textContent = +basePrice + toppingCost;
+            total = bill;
+            
+            thePrice.textContent = total;
 
             break;
     
@@ -560,12 +561,11 @@ function blueCheeseCheck(){
             addedToppings.pop(blueCheese.name);
             theToppings.textContent = addedToppings;
 
-            toppingsSum();
+            finalSum();
 
-
-
-            thePrice.textContent = +basePrice + toppingCost;            
-            console.log(addedToppings, total);
+            total = bill;
+            
+            thePrice.textContent = total;
             break;
            
         }
