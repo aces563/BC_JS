@@ -1,7 +1,7 @@
-const size2 = 7.50;
-const size4 = 10.50;
-const size6 = 12.50;
-const size8 = 15.50;
+// const size2 = 7.50;
+// const size4 = 10.50;
+// const size6 = 12.50;
+// const size8 = 15.50;
 
 let toppingCost = 0;
 
@@ -16,6 +16,8 @@ let deliveryCost = 0;
 let bill = 0;
 
 
+
+
 const delivery = document.querySelector('#delivery');
 
 const addedToppings = [];
@@ -25,18 +27,18 @@ const pizzaBase = [];
 let kawon = addedToppings.length;
 
 
-function toppingsSum(){
+// function toppingsSum(){
 
-    if (addedToppings.length > 2 ){
+//     if (addedToppings.length > 2 ){
     
-        toppingCost = .50 * addedToppings.length - 2;
+//         toppingCost = .50 * addedToppings.length - 2;
     
-    }
-    else{
-        toppingCost = 0;
-    }
-    return toppingCost;
-}
+//     }
+//     else{
+//         toppingCost = 0;
+//     }
+//     return toppingCost;
+// }
 
 function finalSum(){
 
@@ -50,7 +52,7 @@ function finalSum(){
     }
 
     if (delivery.value == "home delivery" && +toppingCost + +pizzaBase !== 0) {
-        theDelivery.textContent = "Home delivery";
+        theDelivery.textContent = "Home delivery: €5";
         deliveryCost = 5.0;
         bill = +toppingCost + +pizzaBase + +deliveryCost;
 
@@ -59,6 +61,7 @@ function finalSum(){
 
     else{
         deliveryCost = 0;
+        theDelivery.textContent = "Delivery cost: Not applicable";
         bill = +toppingCost + +pizzaBase + +deliveryCost;
 
         thePrice.textContent = bill.toFixed(2);
@@ -70,6 +73,8 @@ function finalSum(){
     console.log(bill.toFixed(2))
     return bill.toFixed(2);
 }
+
+const cname = document.querySelector("#cname");
 
 const check2 = document.querySelector('#size2');
 const check4 = document.querySelector('#size4');
@@ -105,19 +110,24 @@ ham.addEventListener('change', hamCheck);
 pepperoni.addEventListener('change', pepperoniCheck);
 prawn.addEventListener('change', prawnCheck);
 
-// check2.addEventListener("change", pizzaSize);
-// check4.addEventListener("change", pizzaSize);
-// check6.addEventListener("change", pizzaSize);
-// check8.addEventListener("change", pizzaSize);
-
-
 const orderName = document.querySelector('.customer');
 const theSize = document.querySelector('.pizza-size');
 const theToppings = document.querySelector('.pizza-toppings');
 const theDelivery = document.querySelector('.delivery-method');
 const thePrice = document.querySelector('#total-price');
 
-delivery.addEventListener('change', finalSum)
+delivery.addEventListener('change', finalSum);
+
+cname.addEventListener("input", customerName);
+
+// const customerName = () => {
+//     orderName.value = cname.value;
+// }
+
+function customerName (){
+    orderName.textContent = `Name: ${cname.value}`;
+}
+
 
 
 
@@ -131,7 +141,7 @@ function pizzaSize () {
 
         if(size.checked === true){
 
-            theSize.textContent = `You selected size ${+size.size} pizza: €${size.value}`;
+            theSize.textContent = `Size ${+size.size} pizza: €${size.value}`;
 
             pizzaBase.pop();
 
@@ -157,11 +167,21 @@ function jalapenoCheck(){
 
     switch (jalapeno.checked) {
         case true:  
-            addedToppings.push(jalapeno.name);
-            
-            theToppings.textContent = addedToppings;
+        
+        addedToppings.push(jalapeno.name);
+        finalSum();
+        
+        if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
 
-            finalSum();
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+            
+
+            // finalSum();
 
             total = bill;
             
@@ -171,9 +191,16 @@ function jalapenoCheck(){
         case false: 
             
             addedToppings.pop(jalapeno.name);
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
 
             total = bill;
             
@@ -189,9 +216,17 @@ function mushroomCheck(){
         case true:  
             addedToppings.push(mushroom.name);
             
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -201,9 +236,17 @@ function mushroomCheck(){
         case false: 
             
             addedToppings.pop(mushroom.name);
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -219,9 +262,17 @@ function chickenCheck(){
         case true:  
             addedToppings.push(chicken.name);
             
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -232,9 +283,17 @@ function chickenCheck(){
         case false: 
             
             addedToppings.pop(chicken.name);
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -251,9 +310,17 @@ function beefCheck(){
         case true:  
             addedToppings.push(beef.name);
             
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -264,9 +331,16 @@ function beefCheck(){
         case false: 
             
             addedToppings.pop(beef.name);
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
 
             total = bill;
             
@@ -283,9 +357,17 @@ function prawnCheck(){
         case true:  
             addedToppings.push(prawn.name);
             
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -299,8 +381,16 @@ function prawnCheck(){
             theToppings.textContent = addedToppings;
 
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
 
-            total = bill;
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
             
             thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
@@ -315,9 +405,17 @@ function mozzarelaCheck(){
         case true:  
             addedToppings.push(mozzarela.name);
             
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -328,9 +426,17 @@ function mozzarelaCheck(){
         case false: 
             
             addedToppings.pop(mozzarela.name);
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -347,9 +453,17 @@ function hamCheck(){
         case true:  
             addedToppings.push(ham.name);
             
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -360,9 +474,17 @@ function hamCheck(){
         case false: 
             
             addedToppings.pop(ham.name);
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -379,9 +501,17 @@ function pepperoniCheck(){
         case true:  
             addedToppings.push(pepperoni.name);
             
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -392,9 +522,17 @@ function pepperoniCheck(){
         case false: 
             
             addedToppings.pop(pepperoni.name);
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -411,9 +549,17 @@ function fetaCheck(){
         case true:  
             addedToppings.push(feta.name);
             
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -424,9 +570,17 @@ function fetaCheck(){
         case false: 
             
             addedToppings.pop(feta.name);
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -443,9 +597,17 @@ function blueCheeseCheck(){
         case true:  
             addedToppings.push(blueCheese.name);
             
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             
@@ -456,9 +618,17 @@ function blueCheeseCheck(){
         case false: 
             
             addedToppings.pop(blueCheese.name);
-            theToppings.textContent = addedToppings;
-
             finalSum();
+        
+            if(addedToppings.length > 4){
+                theToppings.textContent = `${addedToppings.length} toppings:
+                €${toppingCost.toFixed(2)}`;
+
+            } else{
+                theToppings.textContent = `${addedToppings.length} toppings: free`;
+
+            }
+
 
             total = bill;
             

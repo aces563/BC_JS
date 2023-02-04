@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Raleway', sans-serif;
+    font-size: 18px;
 }
 
 h1, h2 {
@@ -85,8 +86,8 @@ figcaption {
     padding: 10px;
     margin-left: 10px;
     box-shadow: 1px 3px 3px 1px;
-    background-color: brown;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 .order-form {
@@ -248,6 +249,15 @@ footer {
     color: white;
     text-align: center;
     margin-top: 10px;
+}
+
+#total-price{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+input {
+    font-family: inherit;
 }
 
 
