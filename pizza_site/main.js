@@ -49,9 +49,10 @@ function toppingsSum(){
     }
     return toppingCost;
 }
+
 function finalSum(){
 
-    if (addedToppings.length > 2 ){
+    if (addedToppings.length > 4 ){
     
         toppingCost = .50 * addedToppings.length - 2;
     
@@ -119,9 +120,6 @@ ham.addEventListener('change', hamCheck);
 pepperoni.addEventListener('change', pepperoniCheck);
 prawn.addEventListener('change', prawnCheck);
 
-
-
-
 // check2.addEventListener("change", newChecking);
 // check4.addEventListener("change", newChecking);
 // check6.addEventListener("change", newChecking);
@@ -143,9 +141,6 @@ delivery.addEventListener('change', finalSum)
 
 
 const toppings = [jalapeno, mushroom, chicken, beef, mozzarela, prawn, feta, ham, pepperoni, blueCheese];
-
-
-
 
 const checks = [check2, check4, check6, check8]
 
@@ -325,10 +320,7 @@ function chickenCheck(){
 }
 
 function beefCheck(){
-
-    
-    
-    
+ 
     switch (beef.checked) {
         case true:  
             addedToppings.push(beef.name);
@@ -572,27 +564,23 @@ function blueCheeseCheck(){
        
 }
 
-
-
-
-
 function orderPizza() {
 
-    // if (jalapeno.checked === true) {
-    //     addedToppings.push(jalapeno.name);
+    if (jalapeno.checked === true) {
+        addedToppings.push(jalapeno.name);
         
-    //     theToppings.textContent = addedToppings;
+        theToppings.textContent = addedToppings;
         
-    //     console.log(addedToppings);
+        console.log(addedToppings);
         
-    // }
-    // else if (jalapeno.checked === false) {
+    }
+    else {
         
-    //     addedToppings.pop(jalapeno.name);
-    //     theToppings.textContent = addedToppings;
+        addedToppings.pop(jalapeno.name);
+        theToppings.textContent = addedToppings;
         
-    //     console.log(addedToppings);
-    // }
+        console.log(addedToppings);
+    }
     if (mushroom.checked == true) {
         addedToppings.push(mushroom.name);
         
@@ -601,43 +589,43 @@ function orderPizza() {
         console.log(addedToppings);
         
     }
-    else if (mushroom.checked == false) {
+    else  {
         
         addedToppings.pop(mushroom.name);
         theToppings.textContent = addedToppings;
         
         console.log(addedToppings);
     }
-    // if (chicken.checked == true) {
-    //     addedToppings.push(chicken.name);
+    if (chicken.checked == true) {
+        addedToppings.push(chicken.name);
         
-    //     theToppings.textContent = addedToppings;
+        theToppings.textContent = addedToppings;
         
-    //     console.log(addedToppings);
+        console.log(addedToppings);
         
-    // }
-    // else if (chicken.checked == false) {
+    }
+    else  {
         
-    //     addedToppings.pop(chicken.name);
-    //     theToppings.textContent = addedToppings;
+        addedToppings.pop(chicken.name);
+        theToppings.textContent = addedToppings;
         
-    //     console.log(addedToppings);
-    // }
-    // if (beef.checked == true) {
-    //     addedToppings.push(beef.name);
+        console.log(addedToppings);
+    }
+    if (beef.checked == true) {
+        addedToppings.push(beef.name);
         
-    //     theToppings.textContent = addedToppings;
+        theToppings.textContent = addedToppings;
         
-    //     console.log(addedToppings);
+        console.log(addedToppings);
         
-    // }
-    // else if (beef.checked == false) {
+    }
+    else  {
         
-    //     addedToppings.pop(beef.name);
-    //     theToppings.textContent = addedToppings;
+        addedToppings.pop(beef.name);
+        theToppings.textContent = addedToppings;
         
-    //     console.log(addedToppings);
-    // }
+        console.log(addedToppings);
+    }
 }
 
 
