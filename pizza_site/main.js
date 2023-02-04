@@ -15,26 +15,14 @@ let deliveryCost = 0;
 
 let bill = 0;
 
+
 const delivery = document.querySelector('#delivery');
-
-
 
 const addedToppings = [];
 
 const pizzaBase = [];
 
 let kawon = addedToppings.length;
-
-// function totalSum(toppingCost, basePrice){
-
-//     for (i = 0; i < addedToppings.length; i++){
-//         toppingCost+=addedToppings[i];
-    
-//     }
-    
-//     total = toppingCost + basePrice;
-//     return total;
-// }
 
 
 function toppingsSum(){
@@ -61,41 +49,37 @@ function finalSum(){
         toppingCost = 0;
     }
 
-    if (delivery.value == "home delivery") {
+    if (delivery.value == "home delivery" && +toppingCost + +pizzaBase !== 0) {
         theDelivery.textContent = "Home delivery";
         deliveryCost = 5.0;
         bill = +toppingCost + +pizzaBase + +deliveryCost;
 
-        thePrice.textContent = bill;
+        thePrice.textContent = bill.toFixed(2);
     }
 
     else{
         deliveryCost = 0;
         bill = +toppingCost + +pizzaBase + +deliveryCost;
 
-        thePrice.textContent = bill;
+        thePrice.textContent = bill.toFixed(2);
     }
 
 
 
     bill = +toppingCost + +pizzaBase + +deliveryCost;
-    console.log(bill)
-    return bill;
+    console.log(bill.toFixed(2))
+    return bill.toFixed(2);
 }
-
-
-
-
-const cname = document.querySelector("#cname");
 
 const check2 = document.querySelector('#size2');
 const check4 = document.querySelector('#size4');
 const check6 = document.querySelector('#size6');
 const check8 = document.querySelector('#size8');
 
-
-
-
+check2.addEventListener("change", pizzaSize);
+check4.addEventListener("change", pizzaSize);
+check6.addEventListener("change", pizzaSize);
+check8.addEventListener("change", pizzaSize);
 
 
 const jalapeno = document.querySelector('#jalapeno');
@@ -109,6 +93,7 @@ const ham = document.querySelector('#ham');
 const pepperoni = document.querySelector('#pepperoni');
 const prawn = document.querySelector('#prawn');
 
+
 jalapeno.addEventListener('change', jalapenoCheck);
 mushroom.addEventListener('change', mushroomCheck);
 chicken.addEventListener('change', chickenCheck);
@@ -120,15 +105,11 @@ ham.addEventListener('change', hamCheck);
 pepperoni.addEventListener('change', pepperoniCheck);
 prawn.addEventListener('change', prawnCheck);
 
-// check2.addEventListener("change", newChecking);
-// check4.addEventListener("change", newChecking);
-// check6.addEventListener("change", newChecking);
-// check8.addEventListener("change", newChecking);
+// check2.addEventListener("change", pizzaSize);
+// check4.addEventListener("change", pizzaSize);
+// check6.addEventListener("change", pizzaSize);
+// check8.addEventListener("change", pizzaSize);
 
-check2.addEventListener("change", checkRadio);
-check4.addEventListener("change", checkRadio);
-check6.addEventListener("change", checkRadio);
-check8.addEventListener("change", checkRadio);
 
 const orderName = document.querySelector('.customer');
 const theSize = document.querySelector('.pizza-size');
@@ -144,78 +125,35 @@ const toppings = [jalapeno, mushroom, chicken, beef, mozzarela, prawn, feta, ham
 
 const checks = [check2, check4, check6, check8]
 
-// function newChecking (basePrice) {
+function pizzaSize () {
 
-//     for (let i = 0; i < checks.length; i++) {
-//         // console.log(`checks[${i}]=${checks[i]}`);
-//         if(checks[i].checked === true){
+    for (const size of checks) {
 
-//             theSize.textContent = `You selected size ${+checks[i].size} pizza: €${checks[i].value}`;
+        if(size.checked === true){
 
-//             basePrice = checks[i].value;
+            theSize.textContent = `You selected size ${+size.size} pizza: €${size.value}`;
 
-
-//             pizzaBase.push(checks[i].value);
+            pizzaBase.pop();
 
 
+            pizzaBase.push(size.value);
+
+            console.log(pizzaBase)
+
+            finalSum();
+
+            total = bill;
             
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
+            console.log(bill.toFixed(2))
+            console.log('size value is', size.value)
+           
+        } 
+    }
 
-//             // console.log(basePrice);
-
-//             console.log(pizzaBase)
-
-//             thePrice.textContent = +basePrice + +toppingCost;
-            
-//             toppingCost = .50 * addedToppings.length;
-            
-
-
-//         } 
-//         else if(checks[i].checked === false) {
-
-//             // basePrice = 0;
-//             pizzaBase.pop(0);
-
-
-//             // total = total - basePrice;
-//             // thePrice.textContent = total;
-
-//         }
-//     }
-
-
-    
-
-    
-//     // for (i = 0; i < toppings.length; i++) {
-//     //     // console.log(`toppings[${i}]=${toppings[i].name}`);
-//     //     if (toppings[i].checked == true > 4) {
-//     //         console.log('4 toppings checked');
-//     //     }
-    
-//     // }
-// }
-
-// const toppings = [jalapeno, mushroom, chicken, beef, mozzarela, prawn, feta, ham, pepperoni, blueCheese];
-
-
-// for (i = 0; i < toppings.length; i++) {
-//     // console.log(`toppings[${i}]=${toppings[i].name}`);
-//     if (toppings[i].checked == true > 4) {
-//         console.log('4 toppings checked');
-//     }
-
-// }
-
+}
 
 function jalapenoCheck(){
-
-    finalSum();
-
-    total = bill;
-    
-    thePrice.textContent = total;
-
 
     switch (jalapeno.checked) {
         case true:  
@@ -227,12 +165,9 @@ function jalapenoCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
-
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
-    
-    
-        
+           
         case false: 
             
             addedToppings.pop(jalapeno.name);
@@ -242,14 +177,13 @@ function jalapenoCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
            
         }
        
 }
 function mushroomCheck(){
-
 
     switch (mushroom.checked) {
         case true:  
@@ -261,12 +195,9 @@ function mushroomCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
-
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
-    
-    
-        
+         
         case false: 
             
             addedToppings.pop(mushroom.name);
@@ -276,14 +207,13 @@ function mushroomCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
            
         }
        
 }
 function chickenCheck(){
-
 
     switch (chicken.checked) {
         case true:  
@@ -295,24 +225,20 @@ function chickenCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
 
             break;
-    
-    
-        
+          
         case false: 
             
             addedToppings.pop(chicken.name);
             theToppings.textContent = addedToppings;
 
-
-
             finalSum();
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
            
         }
@@ -331,23 +257,20 @@ function beefCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
 
             break;
-    
-    
-        
+         
         case false: 
             
             addedToppings.pop(beef.name);
             theToppings.textContent = addedToppings;
 
-
             finalSum();
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
            
         }
@@ -355,7 +278,6 @@ function beefCheck(){
 }
 
 function prawnCheck(){
-
 
     switch (prawn.checked) {
         case true:  
@@ -367,12 +289,10 @@ function prawnCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
 
             break;
-    
-    
-        
+           
         case false: 
             
             addedToppings.pop(prawn.name);
@@ -382,7 +302,7 @@ function prawnCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
            
         }
@@ -390,7 +310,6 @@ function prawnCheck(){
 }
 
 function mozzarelaCheck(){
-
 
     switch (mozzarela.checked) {
         case true:  
@@ -402,12 +321,10 @@ function mozzarelaCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
 
             break;
-    
-    
-        
+         
         case false: 
             
             addedToppings.pop(mozzarela.name);
@@ -417,7 +334,7 @@ function mozzarelaCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
            
         }
@@ -425,7 +342,6 @@ function mozzarelaCheck(){
 }
 
 function hamCheck(){
-
 
     switch (ham.checked) {
         case true:  
@@ -437,12 +353,10 @@ function hamCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
 
             break;
-    
-    
-        
+       
         case false: 
             
             addedToppings.pop(ham.name);
@@ -452,7 +366,7 @@ function hamCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
            
         }
@@ -460,7 +374,6 @@ function hamCheck(){
 }
 
 function pepperoniCheck(){
-
 
     switch (pepperoni.checked) {
         case true:  
@@ -472,12 +385,10 @@ function pepperoniCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
 
             break;
-    
-    
-        
+         
         case false: 
             
             addedToppings.pop(pepperoni.name);
@@ -487,7 +398,7 @@ function pepperoniCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
            
         }
@@ -495,7 +406,6 @@ function pepperoniCheck(){
 }
 
 function fetaCheck(){
-
 
     switch (feta.checked) {
         case true:  
@@ -507,12 +417,10 @@ function fetaCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
 
             break;
-    
-    
-        
+         
         case false: 
             
             addedToppings.pop(feta.name);
@@ -522,7 +430,7 @@ function fetaCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
            
         }
@@ -530,7 +438,6 @@ function fetaCheck(){
 }
 
 function blueCheeseCheck(){
-
 
     switch (blueCheese.checked) {
         case true:  
@@ -542,12 +449,10 @@ function blueCheeseCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
 
             break;
-    
-    
-        
+          
         case false: 
             
             addedToppings.pop(blueCheese.name);
@@ -557,187 +462,11 @@ function blueCheeseCheck(){
 
             total = bill;
             
-            thePrice.textContent = total;
+            thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
             break;
            
         }
        
-}
-
-function orderPizza() {
-
-    if (jalapeno.checked === true) {
-        addedToppings.push(jalapeno.name);
-        
-        theToppings.textContent = addedToppings;
-        
-        console.log(addedToppings);
-        
-    }
-    else {
-        
-        addedToppings.pop(jalapeno.name);
-        theToppings.textContent = addedToppings;
-        
-        console.log(addedToppings);
-    }
-    if (mushroom.checked == true) {
-        addedToppings.push(mushroom.name);
-        
-        theToppings.textContent = addedToppings;
-        
-        console.log(addedToppings);
-        
-    }
-    else  {
-        
-        addedToppings.pop(mushroom.name);
-        theToppings.textContent = addedToppings;
-        
-        console.log(addedToppings);
-    }
-    if (chicken.checked == true) {
-        addedToppings.push(chicken.name);
-        
-        theToppings.textContent = addedToppings;
-        
-        console.log(addedToppings);
-        
-    }
-    else  {
-        
-        addedToppings.pop(chicken.name);
-        theToppings.textContent = addedToppings;
-        
-        console.log(addedToppings);
-    }
-    if (beef.checked == true) {
-        addedToppings.push(beef.name);
-        
-        theToppings.textContent = addedToppings;
-        
-        console.log(addedToppings);
-        
-    }
-    else  {
-        
-        addedToppings.pop(beef.name);
-        theToppings.textContent = addedToppings;
-        
-        console.log(addedToppings);
-    }
-}
-
-
-
-
-
-
-// cname.addEventListener("input", pizzaOrder);
-
-
-
-
-
-function checkRadio (){
-
-    finalSum();
-
-        if(check2.checked == true){
-
-            theSize.textContent = `You selected size ${check2.value} pizza`;
-
-            basePrice = size2;
-
-            
-            pizzaBase.pop();
-            
-            pizzaBase.push(check2.value);
-            
-            console.log(pizzaBase);
-
-            finalSum();
-
-            total = bill;
-            
-            thePrice.textContent = bill;
-
-
-
-        } 
-        else if(check4.checked == true) {
-
-            theSize.textContent = `You selected size ${check4.value} pizza`;
-            basePrice = size4;
-
-            thePrice.textContent = total;
-
-            pizzaBase.pop();
-
-            pizzaBase.push(check4.value);
-            console.log(pizzaBase);
-
-            finalSum();
-
-            total = bill;
-            
-            thePrice.textContent = bill;
-
-
-
-
-        }
-        else if(check6.checked == true) {
-
-            theSize.textContent = `You selected size ${check6.value} pizza`;
-            basePrice = size6;
-
-            pizzaBase.pop();
-
-            pizzaBase.push(check6.value);
-            console.log(pizzaBase);
-            
-            finalSum();
-
-            total = bill;
-            
-            thePrice.textContent = total;
-
-
-
-
-        }
-        else if(check8.checked == true) {
-
-            theSize.textContent = `You selected size ${check8.value} pizza`;
-            basePrice = size8;
-
-            pizzaBase.pop();
-
-            pizzaBase.push(check8.value);
-            console.log(pizzaBase)
-            
-            finalSum();
-
-            total = bill;
-            
-            thePrice.textContent = bill;
-
-
-
-
-        } 
-        else {
-            theSize.textContent = '';
-
-        }
-
-        theDelivery.textContent = `Delivery type: ${delivery.value}`;
-
-        thePrice.textContent = bill;
-
-
-
 }
 
 
