@@ -21,7 +21,7 @@ const addedToppings = [];
 
 const pizzaBase = [];
 
-let kawon = addedToppings.length;
+let li;
 
 
 function finalSum(){
@@ -52,8 +52,7 @@ function finalSum(){
     }
 
     bill = +toppingCost + +pizzaBase + +deliveryCost;
-    console.log(bill.toFixed(2))
-    // return bill.toFixed(2);
+
     return thePrice.textContent = `The total sum of your order is: €${bill.toFixed(2)}`;
 
 }
@@ -92,9 +91,13 @@ ham.addEventListener('change', toppingsChecker);
 pepperoni.addEventListener('change', toppingsChecker);
 prawn.addEventListener('change', toppingsChecker);
 
+
+
 const orderName = document.querySelector('.customer');
 const theSize = document.querySelector('.pizza-size');
-const theToppings = document.querySelector('.pizza-toppings');
+const toppingsHeading = document.querySelector('.toppings-heading');
+const theToppings = document.querySelector('#toppings-list');
+
 const theDelivery = document.querySelector('.delivery-method');
 const thePrice = document.querySelector('#total-price');
 
@@ -127,8 +130,6 @@ function pizzaSize () {
 
             pizzaBase.push(size.value);
 
-            console.log(pizzaBase)
-
             finalSum();
 
            
@@ -143,14 +144,29 @@ function toppingsChecker(){
         case true:  
         
         addedToppings.push(this.name);
+
+        console.log(addedToppings)
         finalSum();
         
         if(addedToppings.length > 4){
-                theToppings.textContent = `${addedToppings.length} toppings:
+
+            theToppings.textContent = addedToppings.join(', ');
+
+                // theToppings.textContent = `${addedToppings.length} toppings:
+                // €${toppingCost.toFixed(2)}`;
+
+                toppingsHeading.textContent = `${addedToppings.length} toppings:
                 €${toppingCost.toFixed(2)}`;
 
+                
+
             } else{
-                theToppings.textContent = `${addedToppings.length} toppings: free`;
+                // theToppings.textContent = `${addedToppings.length} toppings: free`;
+                  toppingsHeading.textContent = `${addedToppings.length} toppings: free`; 
+                    
+                    theToppings.textContent = addedToppings.join(', ');
+
+
 
             }
             
@@ -160,15 +176,26 @@ function toppingsChecker(){
            
         case false: 
             
-            addedToppings.pop(this.name);
+            let start = addedToppings.indexOf(this.name);
+            addedToppings.splice(start, 1);
+
+            console.log(addedToppings)
             finalSum();
         
             if(addedToppings.length > 4){
+
+                theToppings.textContent = addedToppings.join(', ');
+
+              
                 theToppings.textContent = `${addedToppings.length} toppings:
                 €${toppingCost.toFixed(2)}`;
 
             } else{
-                theToppings.textContent = `${addedToppings.length} toppings: free`;
+                toppingsHeading.textContent = `${addedToppings.length} toppings: free`;
+                    
+                    theToppings.textContent = addedToppings;
+
+                  
 
             }
 
@@ -179,8 +206,3 @@ function toppingsChecker(){
         }
        
 }
-
-
-
-
-               
