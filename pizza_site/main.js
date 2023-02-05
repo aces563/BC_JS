@@ -152,17 +152,14 @@ function toppingsChecker(){
 
             theToppings.textContent = addedToppings.join(', ');
 
-                // theToppings.textContent = `${addedToppings.length} toppings:
-                // €${toppingCost.toFixed(2)}`;
-
-                toppingsHeading.textContent = `${addedToppings.length} toppings:
+                toppingsHeading.textContent = `${addedToppings.length} Toppings:
                 €${toppingCost.toFixed(2)}`;
 
                 
 
             } else{
-                // theToppings.textContent = `${addedToppings.length} toppings: free`;
-                  toppingsHeading.textContent = `${addedToppings.length} toppings: free`; 
+               
+                  toppingsHeading.textContent = `${addedToppings.length} Toppings: free`; 
                     
                     theToppings.textContent = addedToppings.join(', ');
 
@@ -179,7 +176,6 @@ function toppingsChecker(){
             let start = addedToppings.indexOf(this.name);
             addedToppings.splice(start, 1);
 
-            console.log(addedToppings)
             finalSum();
         
             if(addedToppings.length > 4){
@@ -191,9 +187,9 @@ function toppingsChecker(){
                 €${toppingCost.toFixed(2)}`;
 
             } else{
-                toppingsHeading.textContent = `${addedToppings.length} toppings: free`;
+                toppingsHeading.textContent = `${addedToppings.length} Toppings: free`;
                     
-                    theToppings.textContent = addedToppings;
+                    theToppings.textContent = addedToppings.join(', ');
 
                   
 
