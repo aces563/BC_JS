@@ -22,7 +22,8 @@ h1 {
 
 
 .heading-padding {
-    padding: 10px;
+    padding: 30px;
+
 }
 
 
@@ -66,8 +67,8 @@ main{
 
 figcaption {
     text-align: center;
-    margin-bottom: 12px;
     color: black;
+    padding-top: 390px;
 }
 
 
@@ -150,6 +151,7 @@ fieldset {
     border-radius: 10px;
     text-align: center;
     padding: 25px;
+    margin: auto;
 }
 
 .topping-checkboxes{
@@ -220,7 +222,9 @@ fieldset {
 
 .pizza-card-front{
     /* background-color: #1f1f1f; */
-    background-image: linear-gradient(180deg, rgba(0,0,0,0.4)0%, rgba(0,0,0,0.3)100%), url('pizza.jpg');
+    /* background-image: linear-gradient(180deg, rgba(0,0,0,0.4)0%, rgba(0,0,0,0.3)100%), url('pizza.jpg'); */
+
+    background: linear-gradient(180deg, rgba(0,0,0,0.4)0%, rgba(0,0,0,0.3)100%), url('pizza.jpg');
     background-size: cover;
     background-color: rgba(0,0,0,0.5);
     border-radius: 10px;
@@ -237,11 +241,15 @@ fieldset {
     padding: 10px;
 }
 
-.white-text {
+.view-base-prices {
     color: white;
     font-size: 18px;
     font-weight: bold;
-    padding-top: 375px;
+    /* padding-top: 375px; */
+    /* top: 80px; */
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-end ; */
     /* animation-name: hint;
     animation-duration: 1s;
     animation-iteration-count: 4;
@@ -327,7 +335,7 @@ input[type=checkbox]{
 
 }
 
-@media (max-width: 868px) {
+@media (max-width: 1098px) {
 
     input[type=radio]{
         /* display: inline-block; */
@@ -336,7 +344,7 @@ input[type=checkbox]{
         bottom: 16px;
         /* left: 40px; */
         display: block;
-        min-width: 200px;
+        min-width: 320px;
     }
     input[type=checkbox]{
         /* display: inline-block; */
@@ -344,7 +352,70 @@ input[type=checkbox]{
         bottom: 17px;
         /* left: 40px; */
         display: block;
-        min-width: 200px;
+        min-width: 320px;
+    }
+
+}
+@media (max-width: 925px) {
+
+    input[type=radio]{
+        /* display: inline-block; */
+        /* display: flex; */
+        position: relative;
+        bottom: 16px;
+        /* left: 40px; */
+        display: block;
+        min-width: 220px;
+    }
+    input[type=checkbox]{
+        /* display: inline-block; */
+        position: relative;
+        bottom: 17px;
+        /* left: 40px; */
+        display: block;
+        min-width: 220px;
+    }
+
+}
+@media (max-width: 768px) {
+
+    input[type=radio]{
+        /* display: inline-block; */
+        /* display: flex; */
+        position: relative;
+        bottom: 16px;
+        /* left: 40px; */
+        display: block;
+        min-width: 100px;
+    }
+    input[type=checkbox]{
+        /* display: inline-block; */
+        position: relative;
+        bottom: 17px;
+        /* left: 40px; */
+        display: block;
+        min-width: 100px;
+    }
+
+}
+@media (max-width: 368px) {
+
+    input[type=radio]{
+        /* display: inline-block; */
+        /* display: flex; */
+        position: relative;
+        bottom: 16px;
+        /* left: 40px; */
+        display: block;
+        min-width: 100px;
+    }
+    input[type=checkbox]{
+        /* display: inline-block; */
+        position: relative;
+        bottom: 17px;
+        /* left: 40px; */
+        display: block;
+        min-width: 100px;
     }
 
 }
