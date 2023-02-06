@@ -12,6 +12,10 @@ let bill = 0;
 
 let show = document.querySelector(".delivery-add");
 
+let deliveryAddress = document.querySelector('#delivery-address').value;
+
+let deliverTo = document.querySelector('#deliver-to');
+
 
 const delivery = document.querySelector('#delivery');
 
@@ -37,6 +41,8 @@ function finalSum(){
         bill = +toppingCost + +pizzaBase + +deliveryCost;
 
         show.classList.add('delivery-show');
+
+        deliverTo.textContent = deliveryAddress;
 
 
         thePrice.textContent = bill.toFixed(2);
@@ -104,6 +110,8 @@ const thePrice = document.querySelector('#total-price');
 delivery.addEventListener('change', finalSum);
 
 cname.addEventListener("input", customerName);
+
+// deliveryAddress.addEventListener('change', finalSum);
 
 function customerName (){
     orderName.textContent = `Name: ${cname.value}`;

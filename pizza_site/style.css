@@ -511,6 +511,10 @@ input[type=checkbox]{
 
 .delivery-add{
     display: none;
+    margin: auto;
+    margin-top: 10px;
+    padding: 5px;
+
 }
 
 textarea{
