@@ -1,5 +1,3 @@
-
-
 let toppingCost = 0;
 
 let basePrice = 0;
@@ -11,6 +9,9 @@ let reversed;
 let deliveryCost = 0;
 
 let bill = 0;
+
+let show = document.querySelector(".delivery-add");
+
 
 const delivery = document.querySelector('#delivery');
 
@@ -35,6 +36,9 @@ function finalSum(){
         deliveryCost = 5.0;
         bill = +toppingCost + +pizzaBase + +deliveryCost;
 
+        show.classList.add('delivery-show');
+
+
         thePrice.textContent = bill.toFixed(2);
     }
 
@@ -42,6 +46,9 @@ function finalSum(){
         deliveryCost = 0;
         theDelivery.textContent = "Delivery cost: Not applicable";
         bill = +toppingCost + +pizzaBase + +deliveryCost;
+
+        show.classList.remove('delivery-show');
+
 
         thePrice.textContent = bill.toFixed(2);
     }
@@ -86,8 +93,6 @@ ham.addEventListener('change', toppingsChecker);
 pepperoni.addEventListener('change', toppingsChecker);
 prawn.addEventListener('change', toppingsChecker);
 
-
-
 const orderName = document.querySelector('.customer');
 const theSize = document.querySelector('.pizza-size');
 const toppingsHeading = document.querySelector('.toppings-heading');
@@ -99,10 +104,6 @@ const thePrice = document.querySelector('#total-price');
 delivery.addEventListener('change', finalSum);
 
 cname.addEventListener("input", customerName);
-
-// const customerName = () => {
-//     orderName.value = cname.value;
-// }
 
 function customerName (){
     orderName.textContent = `Name: ${cname.value}`;
@@ -126,8 +127,7 @@ function pizzaSize () {
             pizzaBase.push(size.value);
 
             finalSum();
-
-           
+    
         } 
     }
 
@@ -150,15 +150,11 @@ function toppingsChecker(){
                 toppingsHeading.textContent = `${addedToppings.length} Toppings:
                 €${toppingCost.toFixed(2)}`;
 
-                
-
             } else{
                
                   toppingsHeading.textContent = `${addedToppings.length} Toppings: free`; 
                     
                     theToppings.textContent = addedToppings.join(', ');
-
-
 
             }
             
@@ -176,7 +172,6 @@ function toppingsChecker(){
             if(addedToppings.length > 4){
 
                 theToppings.textContent = addedToppings.join(', ');
-
               
                 theToppings.textContent = `${addedToppings.length} toppings:
                 €${toppingCost.toFixed(2)}`;
@@ -186,14 +181,11 @@ function toppingsChecker(){
                     
                     theToppings.textContent = addedToppings.join(', ');
 
-                  
-
             }
 
             finalSum();
 
             break;
            
-        }
-       
+        }     
 }
