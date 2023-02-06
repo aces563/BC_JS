@@ -1,7 +1,4 @@
-// const size2 = 7.50;
-// const size4 = 10.50;
-// const size6 = 12.50;
-// const size8 = 15.50;
+
 
 let toppingCost = 0;
 
@@ -20,8 +17,6 @@ const delivery = document.querySelector('#delivery');
 const addedToppings = [];
 
 const pizzaBase = [];
-
-let li;
 
 
 function finalSum(){

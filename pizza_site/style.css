@@ -123,20 +123,15 @@ figcaption {
 }
 
 .radio {
-    /* margin-top: 15px; */
-    /* display: inline-block; */
-    /* display: flex; */
-    /* width: 50px; */
+   
     vertical-align: middle;
     position: relative;
     bottom: 1px;
 }
 
 label {
-    /* margin-top: 15px; */
-    /* display: inline-block; */
+   
     display: block!important;
-    /* width: 50px; */
 }
 
 .align-center {
