@@ -12,7 +12,10 @@ let bill = 0;
 
 let show = document.querySelector(".delivery-add");
 
-let deliveryAddress = document.querySelector('#delivery-address').value;
+let deliveryAddress = document.querySelector('#delivery-address');
+
+deliveryAddress.addEventListener('input', showAdd);
+console.log(deliveryAddress.value)
 
 let deliverTo = document.querySelector('#deliver-to');
 
@@ -41,9 +44,6 @@ function finalSum(){
         bill = +toppingCost + +pizzaBase + +deliveryCost;
 
         show.classList.add('delivery-show');
-
-        deliverTo.textContent = deliveryAddress;
-
 
         thePrice.textContent = bill.toFixed(2);
     }
@@ -111,7 +111,6 @@ delivery.addEventListener('change', finalSum);
 
 cname.addEventListener("input", customerName);
 
-// deliveryAddress.addEventListener('change', finalSum);
 
 function customerName (){
     orderName.textContent = `Name: ${cname.value}`;
@@ -196,4 +195,10 @@ function toppingsChecker(){
             break;
            
         }     
+}
+
+function showAdd(){
+    deliverTo.textContent = `To be delivered to: ${deliveryAddress.value}`;
+   
+
 }
