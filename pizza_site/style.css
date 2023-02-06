@@ -78,8 +78,6 @@ figcaption {
     border: 1px solid gray;
     border-radius: 10px;
     padding: 10px;
-    
-    /* margin-left: 5px; */
     margin: auto;
     margin-bottom: 10px;
 
@@ -98,8 +96,7 @@ figcaption {
     color: black;
     min-width: 320px;
     margin-top: 0;
-    /* justify-content: center;
-    align-items: center; */
+   
 }
 
 .order-form {
@@ -109,9 +106,7 @@ figcaption {
 
 
 .order-form .text-input, .order-form .text-label{
-    /* display: block; */
     margin: auto;
-    /* text-align: center; */
     
 }
 
@@ -159,10 +154,6 @@ fieldset {
     /* width: 350px; */
     display: list-item;
 }
-
-
-
-
 
 .delivery-options {
     display: block;
@@ -222,15 +213,11 @@ fieldset {
 }
 
 .pizza-card-front{
-    /* background-color: #1f1f1f; */
-    /* background-image: linear-gradient(180deg, rgba(0,0,0,0.4)0%, rgba(0,0,0,0.3)100%), url('pizza.jpg'); */
-
     background: linear-gradient(180deg, rgba(0,0,0,0.4)0%, rgba(0,0,0,0.3)100%), url('pizza.jpg');
     background-size: cover;
     background-color: rgba(0,0,0,0.5);
     border-radius: 10px;
     box-shadow: 1px 3px 3px 1px;
-    /* color: white; */
 
 }
 
@@ -246,15 +233,9 @@ fieldset {
     color: white;
     font-size: 18px;
     font-weight: bold;
-    /* padding-top: 375px; */
-    /* top: 80px; */
     display: flex;
     justify-content: center;
-    /* align-items: flex-end ; */
-    /* animation-name: hint;
-    animation-duration: 1s;
-    animation-iteration-count: 4;
-} */
+
 }
 
 @keyframes hint {
@@ -295,19 +276,14 @@ input{
 }
 
 input[type=radio]{
-    /* display: inline-block; */
-    /* display: flex; */
     position: relative;
     bottom: 16px;
-    /* left: 40px; */
     display: block;
     min-width: 300px;
 }
 input[type=checkbox]{
-    /* display: inline-block; */
     position: relative;
     bottom: 17px;
-    /* left: 40px; */
     display: block;
     min-width: 300px;
 }
@@ -317,19 +293,14 @@ input[type=checkbox]{
 @media (max-width: 1400px) {
 
     input[type=radio]{
-        /* display: inline-block; */
-        /* display: flex; */
         position: relative;
         bottom: 16px;
-        /* left: 40px; */
         display: block;
         min-width: 410px;
     }
     input[type=checkbox]{
-        /* display: inline-block; */
         position: relative;
         bottom: 17px;
-        /* left: 40px; */
         display: block;
         min-width: 410px;
     }
@@ -339,19 +310,14 @@ input[type=checkbox]{
 @media (max-width: 1098px) {
 
     input[type=radio]{
-        /* display: inline-block; */
-        /* display: flex; */
         position: relative;
         bottom: 16px;
-        /* left: 40px; */
         display: block;
         min-width: 320px;
     }
     input[type=checkbox]{
-        /* display: inline-block; */
         position: relative;
         bottom: 17px;
-        /* left: 40px; */
         display: block;
         min-width: 320px;
     }
@@ -360,19 +326,14 @@ input[type=checkbox]{
 @media (max-width: 925px) {
 
     input[type=radio]{
-        /* display: inline-block; */
-        /* display: flex; */
         position: relative;
         bottom: 16px;
-        /* left: 40px; */
         display: block;
         min-width: 220px;
     }
     input[type=checkbox]{
-        /* display: inline-block; */
         position: relative;
         bottom: 17px;
-        /* left: 40px; */
         display: block;
         min-width: 220px;
     }
@@ -381,19 +342,14 @@ input[type=checkbox]{
 @media (max-width: 768px) {
 
     input[type=radio]{
-        /* display: inline-block; */
-        /* display: flex; */
         position: relative;
         bottom: 16px;
-        /* left: 40px; */
         display: block;
         min-width: 100px;
     }
     input[type=checkbox]{
-        /* display: inline-block; */
         position: relative;
         bottom: 17px;
-        /* left: 40px; */
         display: block;
         min-width: 100px;
     }
@@ -402,19 +358,14 @@ input[type=checkbox]{
 @media (max-width: 368px) {
 
     input[type=radio]{
-        /* display: inline-block; */
-        /* display: flex; */
         position: relative;
         bottom: 16px;
-        /* left: 40px; */
         display: block;
         min-width: 100px;
     }
     input[type=checkbox]{
-        /* display: inline-block; */
         position: relative;
         bottom: 17px;
-        /* left: 40px; */
         display: block;
         min-width: 100px;
     }
@@ -427,8 +378,6 @@ input[type=checkbox]{
         border: 1px solid gray;
         border-radius: 10px;
         padding: 10px;
-        
-        /* margin-left: 5px; */
         margin: auto;
         margin-bottom: 10px;
     
@@ -448,8 +397,7 @@ input[type=checkbox]{
         color: black;
         min-width: 320px;
         margin-top: 0;
-        /* justify-content: center;
-        align-items: center; */
+        
     }
 }
 @media (max-width: 500px) {
@@ -459,8 +407,6 @@ input[type=checkbox]{
         border: 1px solid gray;
         border-radius: 10px;
         padding: 10px;
-        
-        /* margin-left: 5px; */
         margin: auto;
         margin-bottom: 10px;
     
@@ -480,24 +426,19 @@ input[type=checkbox]{
         color: black;
         min-width: 320px;
         margin-top: 0;
-        /* justify-content: center;
-        align-items: center; */
+       
     }
 
     input[type=radio]{
-        /* display: inline-block; */
-        /* display: flex; */
+       
         position: relative;
         bottom: 16px;
-        /* left: 40px; */
         display: block;
         min-width: 100px;
     }
     input[type=checkbox]{
-        /* display: inline-block; */
         position: relative;
         bottom: 17px;
-        /* left: 40px; */
         display: block;
         min-width: 100px;
 }
@@ -513,7 +454,6 @@ input[type=checkbox]{
     display: none;
     margin: auto;
     margin-top: 10px;
-    padding: 5px;
 
 }
 
@@ -521,7 +461,9 @@ textarea{
     font-family: inherit;
     border-radius: 10px;
     padding: 5px;
-    text-align: left;
+    margin: 10px;
+    width: 300px;
+    font-size: 1rem;
 }
 
 
