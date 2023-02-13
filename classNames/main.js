@@ -49,10 +49,13 @@ const mobMenu = () => {
 
     for (const link of menuItems){
         link.addEventListener('click', mobMenu)
+
     }
 
     if (nav.classList.contains('responsive')){
         nav.classList.remove('responsive')
+        
+
 
     }
     else {
@@ -63,8 +66,6 @@ const mobMenu = () => {
 const modalShow = () => {
     modal.classList.toggle('visible')
 }
-
-
 
 // const hideMenu = () => {
 //     nav.classList.toggle('responsive');

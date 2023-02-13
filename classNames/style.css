@@ -103,7 +103,6 @@ header, section, footer {
     background-color: whitesmoke;
     font-size: inherit;
     font-family: inherit;
-    transition: all 0.4s;
 
 }
 
@@ -116,6 +115,7 @@ header, section, footer {
 
 
 
+
 }
 
 button {
@@ -123,8 +123,22 @@ button {
     border: none;
     box-shadow: none;
     color: white;
+
     
 
+}
+
+ul {
+    display: block;
+    background-color: white;
+    color: #333;
+    position: absolute;
+    left: 0;
+    top: 5rem;
+    width: 100%;
+
+
+    
 }
 
 @media (max-width: 800px){
@@ -145,11 +159,13 @@ button {
         top: 5rem;
         width: 100%;
 
+
         
     }
     ul.responsive li {
         display: block;
         margin: 1rem;
+
         
         
     }
@@ -166,21 +182,22 @@ button {
 
 .modal {
     position: fixed;
-    background-color: rgb(51, 51, 51, 0.8);
+    background-color: rgba(0, 0, 0, .8);
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: black;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     display: none;
 
 }
 
+
+
 .modal.visible {
     display: flex;
+
 }
 
 .modal-box {
@@ -189,10 +206,10 @@ button {
     border: 1px solid black;
     background-color: white;
     margin: auto; 
-    z-index: 1;
     color: black;
     padding: 2rem;
     position: relative;
+
    
     
 }
