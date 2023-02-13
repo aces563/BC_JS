@@ -14,7 +14,7 @@ const bgGenerator = () => {
     for (const item of directions){
         if (item.checked){
             dirValue = item.value
-            colorInfo.textContent = `Background linear-gradient(${dirValue}, ${color1.value}, ${color2.value})`
+            colorInfo.textContent = `linear-gradient(${dirValue}, ${color1.value}, ${color2.value})`
         }
 
     }
