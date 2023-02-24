@@ -3,10 +3,10 @@ const gameScore = document.querySelector("#game-score");
 
 const symbols = document.querySelectorAll(".symbol");
 
-let symbol1 = document.querySelector(".symbol1");
-let symbol2 = document.querySelector(".symbol2");
-let symbol3 = document.querySelector(".symbol3");
-let symbol4 = document.querySelector(".symbol4");
+const symbol1 = document.querySelector(".symbol1");
+const symbol2 = document.querySelector(".symbol2");
+const symbol3 = document.querySelector(".symbol3");
+const symbol4 = document.querySelector(".symbol4");
 
 const start = document.querySelector("#start");
 
@@ -117,9 +117,9 @@ end.addEventListener("change", timer);
 const symbolsArray = [symbol1, symbol2, symbol3, symbol4];
 
 let active = 0;
-let pic;
+// let pic;
 
-function shuffle() {
+function shuffle () {
   let newNumber = 0;
   newNumber = Math.floor(Math.random(symbolsArray.length) * 4);
 
