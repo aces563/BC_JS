@@ -31,6 +31,8 @@ const fastShutter = document.querySelector("#fast-shutter");
 
 const slowShutter = document.querySelector("#slow-shutter");
 
+fastShutter.playbackRate = 0.5;
+
 let intervalId = setInterval(timer, timeout);
 function timer() {
   console.log("hey");
@@ -45,6 +47,8 @@ function timer() {
     shuffle();
     clearInterval(intervalId);
     timeout -= 5;
+    fastShutter.playbackRate+= 0.02;
+
     intervalId = setInterval(timer, timeout);
 
     rounds++;
@@ -82,6 +86,8 @@ function timer() {
     end.checked = true;
     start.checked = false;
     clearInterval(intervalId);
+    slowShutter.play();
+    fastShutter.playbackRate = 0.5;
     timeout = 1000;
     for (const each of symbolsArray) {
       each.disabled = true;
@@ -173,8 +179,11 @@ for (const each of symbolsArray) {
 }
 
 function checkPick() {
+  // fastShutter.playbackRate = 1;
   if (start.checked === true && +this.value === active) {
     this.disabled = true;
+    // fastShutter.play();
+    // fastShutter.playbackRate+= 0.5;
     fastShutter.play();
 
     point++;
@@ -182,6 +191,7 @@ function checkPick() {
   } else if (start.checked === true && !this.value !== active) {
     clearInterval(intervalId);
     slowShutter.play();
+    fastShutter.playbackRate = 0.5;
     score.textContent = 0;
 
     modalContainer.classList.add("visible");
