@@ -31,7 +31,7 @@ const fastShutter = document.querySelector("#fast-shutter");
 
 const slowShutter = document.querySelector("#slow-shutter");
 
-fastShutter.playbackRate = 0.5;
+fastShutter.playbackRate = 1;
 
 let intervalId = setInterval(timer, timeout);
 function timer() {
