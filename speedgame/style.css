@@ -91,31 +91,6 @@ body {
     background-position: center;
 }
 
-.symbol.pic1 {
-    background: url('squirrel1.JPG');
-    background-size: cover;
-    background-position: center;
-}
-
-.symbol.pic2 {
-    background: url('squirrel2.JPG');
-    background-size: cover;
-    background-position: center;
-}
-
-.symbol.pic3 {
-    background: url('squirrel3.JPG');
-    background-size: cover;
-    background-position: center;
-}
-
-.symbol.pic4 {
-    background: url('squirrel4.JPG');
-    background-size: cover;
-    background-position: center;
-}
-
-
 
 .symbol.missed {
     background: url('blank.jpg');
