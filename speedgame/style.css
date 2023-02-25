@@ -37,7 +37,19 @@ body {
     border: none;
     margin: 2rem;
 }
+@media (max-width: 463px){
+    .symbol {
+        background-color: gray;
+        background-image: url(blank.jpg);
+        background-size: cover;
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 50%;
+        border: none;
+        margin: 2rem;
+    }
 
+}
 .symbol.pic {
     background: url('squirrel.jpeg');
     background-size: cover;
@@ -75,12 +87,6 @@ body {
     background-size: cover;
     background-position: center;
 }
-
-
-
-
-
-
 
 #start,
 #stop {
