@@ -86,9 +86,9 @@ function timer() {
     end.checked = true;
     start.checked = false;
     clearInterval(intervalId);
-    slowShutter.play();
     fastShutter.playbackRate = 0.5;
     timeout = 1000;
+    slowShutter.play()
     for (const each of symbolsArray) {
       each.disabled = true;
     }
