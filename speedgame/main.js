@@ -31,7 +31,7 @@ const fastShutter = document.querySelector("#fast-shutter");
 
 const slowShutter = document.querySelector("#slow-shutter");
 
-fastShutter.playbackRate = 1;
+fastShutter.playbackRate = 1.0;
 
 let intervalId = setInterval(timer, timeout);
 function timer() {
@@ -47,7 +47,7 @@ function timer() {
     shuffle();
     clearInterval(intervalId);
     timeout -= 5;
-    fastShutter.playbackRate+= 0.02;
+    fastShutter.playbackRate+= 0.025;
 
     intervalId = setInterval(timer, timeout);
 
@@ -86,7 +86,7 @@ function timer() {
     end.checked = true;
     start.checked = false;
     clearInterval(intervalId);
-    fastShutter.playbackRate = 0.5;
+    fastShutter.playbackRate = 0.25;
     timeout = 1000;
     slowShutter.play()
     for (const each of symbolsArray) {
@@ -191,7 +191,7 @@ function checkPick() {
   } else if (start.checked === true && !this.value !== active) {
     clearInterval(intervalId);
     slowShutter.play();
-    fastShutter.playbackRate = 0.5;
+    fastShutter.playbackRate = 0.25;
     score.textContent = 0;
 
     modalContainer.classList.add("visible");
