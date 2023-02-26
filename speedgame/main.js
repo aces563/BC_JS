@@ -1,19 +1,15 @@
-const score = document.querySelector("#score");
-const gameScore = document.querySelector("#game-score");
+const score = document.querySelector('#score');
+const gameScore = document.querySelector('#game-score');
+const symbols = document.querySelectorAll('.symbol');
+const symbol1 = document.querySelector('.symbol1');
+const symbol2 = document.querySelector('.symbol2');
+const symbol3 = document.querySelector('.symbol3');
+const symbol4 = document.querySelector('.symbol4');
+const start = document.querySelector('#start');
+const end = document.querySelector('#stop');
 
-const symbols = document.querySelectorAll(".symbol");
-
-const symbol1 = document.querySelector(".symbol1");
-const symbol2 = document.querySelector(".symbol2");
-const symbol3 = document.querySelector(".symbol3");
-const symbol4 = document.querySelector(".symbol4");
-
-const start = document.querySelector("#start");
-
-const end = document.querySelector("#stop");
-
-const startLabel = document.querySelector(".start-button");
-const endLabel = document.querySelector(".end-button");
+const startLabel = document.querySelector('.start-button');
+const endLabel = document.querySelector('.end-button');
 
 let point = 0;
 
@@ -21,15 +17,15 @@ let rounds = 0;
 
 let timeout = 1000;
 
-const modalClose = document.querySelector(".modal-close-button");
+const modalClose = document.querySelector('.modal-close-button');
 
-const modalContainer = document.querySelector(".modal-container");
+const modalContainer = document.querySelector('.modal-container');
 
-const feedback = document.querySelector(".feedback");
+const feedback = document.querySelector('.feedback');
 
-const fastShutter = document.querySelector("#fast-shutter");
+const fastShutter = document.querySelector('#fast-shutter');
 
-const slowShutter = document.querySelector("#slow-shutter");
+const slowShutter = document.querySelector('#slow-shutter');
 
 fastShutter.playbackRate = 1.0;
 
@@ -39,8 +35,8 @@ function timer() {
     for (const each of symbolsArray) {
       each.disabled = false;
     }
-    startLabel.style.display = "none";
-    endLabel.style.display = "block";
+    startLabel.style.display = 'none';
+    endLabel.style.display = 'block';
 
     end.checked = false;
     shuffle();
@@ -53,23 +49,14 @@ function timer() {
     rounds++;
   } else if (end.checked === true) {
     if (rounds >= 1) {
-      modalContainer.classList.add("visible");
+      modalContainer.classList.add('visible');
       gameScore.textContent = `You took ${point} shots.`;
 
-      if (point < 10) {
-        feedback.textContent = "You're kinda slow";
-      } else if (point > 10 && point < 20) {
-        feedback.textContent = "Fair, but you could do better!";
-      } else if (point > 20 && point < 30) {
-        feedback.textContent = "Well aimed!";
-      } else if (point > 30 && point < 40) {
-        feedback.textContent = "Good focus!";
-      } else {
-        feedback.textContent = "Nice and steady shots!";
-      }
+      feedbackMessage();
+
     }
-    endLabel.style.display = "none";
-    startLabel.style.display = "block";
+    endLabel.style.display = 'none';
+    startLabel.style.display = 'block';
 
     clearInterval(intervalId);
     score.textContent = point;
@@ -91,24 +78,16 @@ function timer() {
     for (const each of symbolsArray) {
       each.disabled = true;
     }
-    endLabel.style.display = "none";
-    startLabel.style.display = "block";
+    endLabel.style.display = 'none';
+    startLabel.style.display = 'block';
 
-    modalContainer.classList.add("visible");
+    modalContainer.classList.add('visible');
 
     gameScore.textContent = `You took ${point} shots.`;
 
-    if (point < 10) {
-      feedback.textContent = "You're kinda slow";
-    } else if (point > 10 && point < 20) {
-      feedback.textContent = "Fair, but you could do better!";
-    } else if (point > 20 && point < 30) {
-      feedback.textContent = "Well aimed!";
-    } else if (point > 30 && point < 40) {
-      feedback.textContent = "Good focus!";
-    } else {
-      feedback.textContent = "Nice and steady shots!";
-    }
+    
+    feedbackMessage();
+
     score.textContent = 0;
 
     rounds = 0;
@@ -116,8 +95,8 @@ function timer() {
   }
 }
 
-start.addEventListener("change", timer);
-end.addEventListener("change", timer);
+start.addEventListener('change', timer);
+end.addEventListener('change', timer);
 
 const symbolsArray = [symbol1, symbol2, symbol3, symbol4];
 
@@ -131,7 +110,7 @@ function shuffle () {
   switch (randomNumber()) {
     case 0:
       resetSymbol();
-      symbol1.classList.add("pic");
+      symbol1.classList.add('pic');
 
       symbol1.value = 0;
       active = 0;
@@ -140,7 +119,7 @@ function shuffle () {
     case 1:
       resetSymbol();
 
-      symbol2.classList.add("pic");
+      symbol2.classList.add('pic');
 
       symbol2.value = 1;
       active = 1;
@@ -149,7 +128,7 @@ function shuffle () {
     case 2:
       resetSymbol();
 
-      symbol3.classList.add("pic");
+      symbol3.classList.add('pic');
 
       symbol3.value = 2;
       active = 2;
@@ -158,7 +137,7 @@ function shuffle () {
     case 3:
       resetSymbol();
 
-      symbol4.classList.add("pic");
+      symbol4.classList.add('pic');
 
       symbol4.value = 3;
       active = 3;
@@ -174,7 +153,7 @@ function shuffle () {
 }
 
 for (const each of symbolsArray) {
-  each.addEventListener("click", checkPick);
+  each.addEventListener('click', checkPick);
 }
 
 function checkPick() {
@@ -190,26 +169,17 @@ function checkPick() {
     fastShutter.playbackRate = 0.25;
     score.textContent = 0;
 
-    modalContainer.classList.add("visible");
+    modalContainer.classList.add('visible');
     gameScore.textContent = `You took ${point} shots.`;
 
-    if (point < 10) {
-      feedback.textContent = "You're kinda slow";
-    } else if (point > 10 && point < 20) {
-      feedback.textContent = "Fair, but you could do better!";
-    } else if (point > 20 && point < 30) {
-      feedback.textContent = "Well aimed!";
-    } else if (point > 30 && point < 40) {
-      feedback.textContent = "Good focus!";
-    } else {
-      feedback.textContent = "Nice and steady shots!";
-    }
+    feedbackMessage();
+
 
     timeout = 1000;
     start.checked = false;
     end.checked = true;
-    endLabel.style.display = "none";
-    startLabel.style.display = "block";
+    endLabel.style.display = 'none';
+    startLabel.style.display = 'block';
 
     rounds = 0;
     point = 0;
@@ -222,15 +192,29 @@ function checkPick() {
 
 const resetSymbol = () => {
   for (const symbol of symbols) {
-    symbol.style.backgroundColor = "gray";
-    symbol.classList.remove("pic");
+    symbol.style.backgroundColor = 'gray';
+    symbol.classList.remove('pic');
 
     symbol.value = 0;
   }
 };
 
 const closeModal = () => {
-  modalContainer.classList.remove("visible");
+  modalContainer.classList.remove('visible');
 };
 
-modalClose.addEventListener("click", closeModal);
+const feedbackMessage = () => {
+  if (point < 10) {
+    feedback.textContent = "You're kinda slow";
+  } else if (point > 10 && point < 20) {
+    feedback.textContent = 'Fair, but you could do better!';
+  } else if (point > 20 && point < 30) {
+    feedback.textContent = 'Well aimed!';
+  } else if (point > 30 && point < 40) {
+    feedback.textContent = 'Good focus!';
+  } else {
+    feedback.textContent = 'Nice and steady shots!';
+  }
+}
+
+modalClose.addEventListener('click', closeModal);
