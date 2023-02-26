@@ -35,7 +35,6 @@ fastShutter.playbackRate = 1.0;
 
 let intervalId = setInterval(timer, timeout);
 function timer() {
-  console.log("hey");
   if (start.checked === true) {
     for (const each of symbolsArray) {
       each.disabled = false;
@@ -123,11 +122,11 @@ end.addEventListener("change", timer);
 const symbolsArray = [symbol1, symbol2, symbol3, symbol4];
 
 let active = 0;
-// let pic;
 
 function shuffle () {
   let newNumber = 0;
   newNumber = Math.floor(Math.random(symbolsArray.length) * 4);
+  console.log(newNumber)
 
   switch (randomNumber()) {
     case 0:
@@ -179,11 +178,8 @@ for (const each of symbolsArray) {
 }
 
 function checkPick() {
-  // fastShutter.playbackRate = 1;
   if (start.checked === true && +this.value === active) {
     this.disabled = true;
-    // fastShutter.play();
-    // fastShutter.playbackRate+= 0.5;
     fastShutter.play();
 
     point++;
