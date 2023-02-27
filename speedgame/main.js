@@ -102,7 +102,6 @@ let active = 0
 function shuffle () {
   let newNumber = 0
   newNumber = Math.floor(Math.random(symbolsArray.length) * 4)
-  console.log(newNumber)
 
   switch (randomNumber()) {
     case 0:
@@ -160,7 +159,7 @@ function checkPick () {
 
     point++
     score.textContent = point
-  } else if (start.checked === true && !this.value !== active) {
+  } else if (start.checked === true && this.value !== active) {
     clearInterval(intervalId)
     slowShutter.play()
     fastShutter.playbackRate = 0.25
@@ -191,7 +190,7 @@ const resetSymbol = () => {
     symbol.style.backgroundColor = 'gray'
     symbol.classList.remove('pic')
 
-    symbol.value = 0
+    symbol.value = 5
   }
 }
 
