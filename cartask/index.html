@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="car-data">
+            <h2>Insert Car Data</h2>
+            <form>
+
+                <div>
+                    <label for="plate">Licence Plate</label>
+                    <input type="text" id="plate" name="plate">
+                </div>
+
+                <div>
+                    <label for="make">Car maker</label>
+                    <input type="text" id="make" name="make">  
+                </div>
+
+                <div>
+                    <label for="owner">Current owner</label>
+                    <input type="text" id="owner" name="owner">
+                </div>
+
+                <div>
+                    <label for="price">Price</label>
+                    <input type="number" id="price" name="price">
+                </div>
+
+                <div>
+                    <label for="colour">Colour</label>
+                    <input type="text" id="colour" name="colour">
+                </div>
+
+                <div>
+                    <button id="add-car">Add car</button>
+                    <button id="reset" type="reset">Reset</button>
+                </div>
+            </form>
+            <h2>Search</h2>
+            <form class="search-car">
+                <div>
+                    <label for="search">Search car</label>
+                    <input type="text" id="search" name="search" placeholder="Enter licence plate number">
+
+                </div>
+
+                <button id="search-button">Search</button>
+
+            </form>
+
+            <div class="search-result">
+                <h3>Search result</h3>
+                <p>Licence: <span id="carlicence"> </span></p>
+                <p>Car make: <span id="carmake"> </span></p>
+                <p>Car owner: <span id="carowner"> </span></p>
+                <p>Car price: <span id="carprice"> </span></p>
+                <p>Car Colour: <span id="carcolour"> </span></p>
+                <p>Discount: <span id="cardiscount"> </span></p>
+                <p id="search-result"></p>
+            </div>
+        </div>
+        <div class="car-details">
+            <h2>Car details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Licence</th>
+                        <th>Maker</th>
+                        <th>Owner</th>
+                        <th>Price</th>
+                        <th>Colour</th>
+                    </tr>
+                </thead>
+                <tbody id="details-area"></tbody>
+            </table>
+
+        </div>
+
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>

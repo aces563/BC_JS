@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.car-data{
+    flex-basis: 50%;
+    position: relative;
+    padding-right: 1rem;
+}
+
+.car-details{
+    flex-basis: 50%;
+}
+
+form {
+    display: flex;
+    flex-direction:column;
+        
+    justify-content: space-evenly;
+    align-items: baseline;
+    margin: 1rem;
+}
+
+form input {
+    position: absolute;
+    left: 8rem;
+    margin: .5rem;
+    padding: 0.1rem;
+    font-family: inherit;
+
+}
+
+  label{
+    line-height: 2.5rem;  
+}
+
+th {
+    padding: 0.2rem;
+}
+
+td{
+    padding: 0.3rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-overflow: break-word;
+    overflow: hidden;
+
+}
+
+#search{
+    width: 11rem;
+}
+
+.search-result p{
+    margin: 1rem;
+}
+
+#search-button{
+    margin: 0.5rem;
+}
+
+th, td{
+    border: 1px gray solid;
+}
+
+#add-car, #reset {
+    margin: 0.5rem;
+}
+
+button{
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 20px;
+}
+
+#add-car{
+    background-color: green;
+}
+
+#reset{
+    background-color: darkred;
+}
+
+
+
+
+
